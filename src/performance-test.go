@@ -18,7 +18,7 @@ type PerformanceStat struct {
 
 
 func api_get_call(c chan PerformanceStat) {
-    url := "https://graviton-ncp-content-gateway.media.yahoo.com/api/v1/gql/stream_view?namespace=news&id=newsroom-trending&version=v1"
+    url := "https://www.google.com"
     success := false
     start := time.Now()
     response, err := http.Get(url)
