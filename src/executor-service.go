@@ -4,6 +4,9 @@ import (
     "log"
 )
 
+/*
+    Generic interfaces and data structures
+*/
 type ExecutorService interface {
     execute()
     submit() chan string
@@ -18,8 +21,13 @@ type Callable interface {
     getChan() chan string
 }
 
+/*
+    Custom implementations
+*/
+
 type CustomJobExecutor struct {
-    
+    //hash map of channel name: {input channel, output channel}
+    //job queue
 }
 
 type MyJob struct {
@@ -48,6 +56,10 @@ func (job MyJob) getChan() (chan string){
     return job.c
 }
 
+
+/*
+    The entry point into the file
+*/
 
 func main() {
     var executor CustomJobExecutor = CustomJobExecutor{}
